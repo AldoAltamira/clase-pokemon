@@ -3,7 +3,6 @@ import {useEffect, useState} from 'react';
 import { useHistory } from "react-router-dom";
 
 function PokemonDetail({pokemon}) {
-  console.log('props en pokemonDetail', pokemon);
   let history = useHistory();
   const [pokemonSelected, setPokemonSelected] = useState(pokemon);
   useEffect(() => {
@@ -22,7 +21,7 @@ function PokemonDetail({pokemon}) {
 
   return (
     <div onClick={() => history.push("/pokemon/" + pokemon.id)}>
-      <img src={pokemonSelected.img} alt="pokemon"></img>
+      <img style={{width: 100, height: 100}} src={pokemonSelected.img} alt="pokemon"></img>
       <p>Nombre: {pokemonSelected.name}</p>
     </div>
   )
